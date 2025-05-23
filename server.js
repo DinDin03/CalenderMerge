@@ -29,12 +29,13 @@ app.get('/auth/callback', oauthCallback);
 
 // 3) Root – if logged in, show form; otherwise kick off OAuth
 app.get('/', (req, res) => {
-  console.log('SESSION:', req.session);
-  if (req.session.email) {
-    return res.render('index', { email: req.session.email });
+  if (!req.session.email) {
+    return res.redirect('/auth/url');
   }
-  res.redirect('/auth/url');
+  // if they’re logged in, render the main page:
+  res.render('index', { email: req.session.email });
 });
+
 
 
 // API
