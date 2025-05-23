@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Free Slot Finder
+    link(rel="stylesheet" href="/styles.css")
+  body
+    .container
+      h1 Common Free Slots
+      form#slotForm
+        label(for="userA") User A Email
+        input#userA(type="email" name="userA" required)
+        label(for="userB") User B Email
+        input#userB(type="email" name="userB" required)
+        label(for="from") From
+        input#from(type="datetime-local" name="from" required)
+        label(for="to") To
+        input#to(type="datetime-local" name="to" required)
+        button(type="submit") Find Slots
+      pre#output
+    script(src="/app.js")

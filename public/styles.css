@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; padding: 2rem; }
+.container { max-width: 600px; margin: auto; }
+label { display: block; margin-top: 1rem; }
+input, button { width: 100%; padding: 0.5rem; margin-top: 0.5rem; }
+button { background: #007bff; color: white; border: none; cursor: pointer; }
+pre { background: #f4f4f4; padding: 1rem; margin-top: 1rem; }
