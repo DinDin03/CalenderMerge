@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'; // brings the express framework
 import session from 'express-session';
 import path from 'path';
 import slotsRouter from './routes/slots.js';

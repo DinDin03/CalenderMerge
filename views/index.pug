@@ -25,7 +25,6 @@ html(lang="en")
         input#userA.participant-input(
           type="email"
           name="userA"
-          placeholder="alice@example.com"
           required
         )
 
@@ -34,7 +33,6 @@ html(lang="en")
         input#userB.participant-input(
           type="email"
           name="userB"
-          placeholder="bob@example.com"
           required
         )
 
@@ -48,9 +46,6 @@ html(lang="en")
         button(type="submit" class="btn-primary") Find Slots
 
       section#slotsContainer.slots
-
-    footer.footer
-      p &copy; 2025 Free Slot Finder
 
     //– Your dynamic script
     script(src="https://cdn.jsdelivr.net/npm/flatpickr" defer)
