@@ -4,8 +4,11 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Free Slot Finder
-    //– Flatpickr
-    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css")
+    //– Flatpickr CSS
+    link(
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    )
     //– Your custom styles
     link(rel="stylesheet" href="/styles.css")
   body
@@ -17,15 +20,28 @@ html(lang="en")
 
     main.container
       form#slotForm.form
-        //– Participants
-        label Participants
-        div#participants.field-group
-          input.participant-input(type="email" name="participants" placeholder="Participant email" required)
-          button#addParticipant(type="button" class="btn-small") + Add
+        //– User A
+        label(for="userA") User A Email
+        input#userA.participant-input(
+          type="email"
+          name="userA"
+          placeholder="alice@example.com"
+          required
+        )
+
+        //– User B
+        label(for="userB") User B Email
+        input#userB.participant-input(
+          type="email"
+          name="userB"
+          placeholder="bob@example.com"
+          required
+        )
 
         //– Date range
         label(for="from") From
         input#from(type="text" name="from" placeholder="Start date & time" required)
+
         label(for="to") To
         input#to(type="text" name="to" placeholder="End date & time" required)
 
@@ -36,7 +52,6 @@ html(lang="en")
     footer.footer
       p &copy; 2025 Free Slot Finder
 
-    //– Our dynamic script
-    script(src="/scripts.js" defer)
-    //– Flatpickr client
+    //– Your dynamic script
     script(src="https://cdn.jsdelivr.net/npm/flatpickr" defer)
+    script(src="/scripts.js" defer)
