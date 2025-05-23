@@ -5,18 +5,22 @@ import slotsRouter from './routes/slots.js';
 import { getAuthUrl, oauthCallback } from './auth.js';
 
 const app = express();
+app.set('trust proxy', 1);
 
 // 1) Session middleware
+import session from 'express-session';
+
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'a_very_secret_key',
+  secret: process.env.SESSION_SECRET || 'a_really_long_random_string',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.NODE_ENV === 'production', // false locally
+    secure: process.env.NODE_ENV === 'production',  // true on Heroku (HTTPS), false locally
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000
   }
 }));
+
 
 // 2) View engine & static
 app.set('views', path.join(process.cwd(), 'views'));
