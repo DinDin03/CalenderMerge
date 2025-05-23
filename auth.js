@@ -39,7 +39,8 @@ export async function oauthCallback(req, res, next) {
       [email, JSON.stringify(tokens)]
     );
 
-    res.send('Auth successful for ' + email);
+    req.session.email = email;
+    res.redirect('/');
   } catch (err) {
     next(err);
   }
