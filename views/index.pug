@@ -9,6 +9,11 @@ html(lang="en")
     .container
       h1 Common Free Slots
       p Logged in as #{email}
+      //– Log out button
+      form(action="/logout" method="post" style="margin-bottom:1rem;")
+        button(type="submit") Logout
+
+      //– The existing slot form
       form#slotForm
         label(for="userA") User A Email
         input#userA(type="email" name="userA" required)
@@ -19,5 +24,6 @@ html(lang="en")
         label(for="to") To
         input#to(type="datetime-local" name="to" required)
         button(type="submit") Find Slots
+
       pre#output
-    script(src="/app.js")
+    script(src="/app.js" defer)

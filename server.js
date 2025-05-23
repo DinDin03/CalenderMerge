@@ -37,6 +37,16 @@ app.get('/', (req, res) => {
   res.render('index', { email: req.session.email });
 });
 
+// After your other routes, but before app.listen:
+app.post('/logout', (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) return next(err);
+    // Clear the cookie on the client
+    res.clearCookie('connect.sid');  
+    // Redirect back to root, which will send them to /auth/url
+    res.redirect('/');
+  });
+});
 
 
 // API
