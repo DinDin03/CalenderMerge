@@ -1,6 +1,81 @@
-body { font-family: Arial, sans-serif; padding: 2rem; }
-.container { max-width: 600px; margin: auto; }
-label { display: block; margin-top: 1rem; }
-input, button { width: 100%; padding: 0.5rem; margin-top: 0.5rem; }
-button { background: #007bff; color: white; border: none; cursor: pointer; }
-pre { background: #f4f4f4; padding: 1rem; margin-top: 1rem; }
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button,
+input {
+    font-size: 1rem;
+}
+
+button {
+    background: #0069ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #0053cc;
+}
+
+.slot-list {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.slot-list li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.slot-list li:last-child {
+    border-bottom: none;
+}
+
+#slotsContainer {
+    margin-top: 1rem;
+}
