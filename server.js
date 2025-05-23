@@ -1,6 +1,6 @@
 import express from 'express'; // brings the express framework
-import session from 'express-session';
-import path from 'path';
+import session from 'express-session'; // pulls the session middleware. we need this to store user email in a cookie-backend session so we know who's logged in
+import path from 'path'; //
 import slotsRouter from './routes/slots.js';
 import { getAuthUrl, oauthCallback } from './auth.js';
 
