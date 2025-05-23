@@ -17,7 +17,7 @@ app.get('/auth/url', getAuthUrl);
 app.get('/auth/callback', oauthCallback);
 
 // Render the form at root
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => res.render('/auth/url'));
 
 // API
 app.use('/slots', slotsRouter);
