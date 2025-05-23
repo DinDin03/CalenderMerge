@@ -8,10 +8,14 @@ const app = express();
 
 // 1) Session middleware
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'replace_this_with_a_strong_secret',
+  secret: process.env.SESSION_SECRET || 'a_very_secret_key',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: process.env.NODE_ENV === 'production' }
+  cookie: {
+    secure: process.env.NODE_ENV === 'production', // false locally
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000
+  }
 }));
 
 // 2) View engine & static
@@ -25,14 +29,13 @@ app.get('/auth/callback', oauthCallback);
 
 // 3) Root – if logged in, show form; otherwise kick off OAuth
 app.get('/', (req, res) => {
-  if (req.session && req.session.email) {
-    // user is authenticated
-    res.render('index', { email: req.session.email });
-  } else {
-    // not yet authenticated
-    res.redirect('/auth/url');
+  console.log('SESSION:', req.session);
+  if (req.session.email) {
+    return res.render('index', { email: req.session.email });
   }
+  res.redirect('/auth/url');
 });
+
 
 // API
 app.use('/slots', slotsRouter);
