@@ -7,9 +7,6 @@ import { getAuthUrl, oauthCallback } from './auth.js';
 const app = express();
 app.set('trust proxy', 1);
 
-// 1) Session middleware
-import session from 'express-session';
-
 app.use(session({
   secret: process.env.SESSION_SECRET || 'a_really_long_random_string',
   resave: false,
